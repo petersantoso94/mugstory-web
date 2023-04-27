@@ -121,7 +121,7 @@ export default function Toaster(props: IProp) {
   showForSecond &&
     setTimeout(() => {
       hideToastHandler();
-    }, showForSecond);
+    }, showForSecond * 1000);
 
   const justifyConst = justify || "end";
   return (

@@ -1,13 +1,13 @@
-import React, { InputHTMLAttributes, SelectHTMLAttributes } from "react";
+import React, { TextareaHTMLAttributes } from "react";
 
-interface IProp extends InputHTMLAttributes<HTMLInputElement> {
+interface IProp extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     errortext: string;
     label?: string;
     labelclass?: string[];
     inputclass?: string[];
     children?: React.ReactNode;
 }
-export default function MInput(props: IProp) {
+export default function MTxtArea(props: IProp) {
     const { errortext, label, labelclass, inputclass } = props;
     const arrInputElementStyles = inputclass ?? [];
     if (errortext) arrInputElementStyles.push("border border-red-500");
@@ -20,7 +20,7 @@ export default function MInput(props: IProp) {
                 </label>
             )}
             {
-                <input
+                <textarea
                     className={`shadow appearance-none border rounded w-full py-2 px-3 ${arrInputElementStyles.join(
                         " "
                     )}`}
