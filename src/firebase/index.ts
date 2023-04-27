@@ -2,13 +2,13 @@ import firebase from "firebase";
 import "firebase/auth";
 import "firebase/analytics";
 const config = {
-  apiKey: "AIzaSyABKdEkKEk7un4VR1eSYeLmIQ49VlRVCO0",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "mugstory-2febb.firebaseapp.com",
   projectId: "mugstory-2febb",
   storageBucket: "mugstory-2febb.appspot.com",
   messagingSenderId: "740841772157",
-  appId: "1:740841772157:web:8eab9987ebdaea2ba9cd14",
-  measurementId: "G-VCGRBSPTHZ",
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 if (!firebase.apps.length) {
   firebase.initializeApp(config);
